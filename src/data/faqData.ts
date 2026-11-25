@@ -50,7 +50,7 @@ export interface FaqItem {
 }
 
 export const MASCOT_IMAGE_URL =
-  '/assets/aistudio/Gemini_Generated_Image_vilxlpvilxlpvilx_bb618390.jpg';
+  `${import.meta.env.BASE_URL}assets/aistudio/Gemini_Generated_Image_vilxlpvilxlpvilx_bb618390.jpg`;
 
 export const FAQ_ITEMS: FaqItem[] = [
   // =========================================================

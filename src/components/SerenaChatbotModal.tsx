@@ -57,13 +57,27 @@ export const SerenaChatbotModal: React.FC<SerenaChatbotModalProps> = ({
     setIsLoading(true);
 
     try {
-      const res = await fetch('/api/chat', {
+      const apiBase =
+        (import.meta.env.VITE_CHAT_API_URL as string | undefined)?.replace(
+          /\/$/,
+          ''
+        ) || '';
+      const res = await fetch(`${apiBase}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: nextHistory.map((m) => ({ role: m.role, text: m.text })),
         }),
       });
+      const contentType = res.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        setErrorMsg(
+          lang === 'es'
+            ? `El chat con IA requiere un servidor backend activo (no disponible en hosting estático). Por favor escríbenos a ${SUPPORT_EMAIL}.`
+            : `The AI assistant requires an active backend server (unavailable on static hosting). Please contact ${SUPPORT_EMAIL}.`
+        );
+        return;
+      }
       const data = (await res.json()) as { reply?: string; error?: string };
 
       if (!res.ok || !data.reply) {

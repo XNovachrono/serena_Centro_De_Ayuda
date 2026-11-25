@@ -4,8 +4,17 @@ import fs from 'fs';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
+export default defineConfig(({command}) => {
+  const base =
+    command === 'serve'
+      ? '/'
+      : process.env.VITE_BASE_PATH ||
+        (process.env.GITHUB_ACTIONS === 'true'
+          ? '/serena_Centro_De_Ayuda/'
+          : './');
+
   return {
+    base,
     plugins: [
       react(),
       tailwindcss(),
