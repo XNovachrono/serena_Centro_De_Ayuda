@@ -1,0 +1,269 @@
+﻿MANUAL DE USUARIO — PLATAFORMA SERENA
+Tu compañera Digital para el bienestar emocional (SENA)
+
+
+TABLA DE CONTENIDO
+1. INTRODUCCIÓN Y RECOMENDACIONES IMPORTANTES        2
+1.1. ¿Qué es SERENA y para qué sirve?        2
+1.2. ¿A quién está dirigida la plataforma?        2
+2. ACCESO A LA PLATAFORMA        3
+2.1. Requisitos de Acceso        3
+2.2. Registro de Cuenta Nueva (Paso a Paso)        3
+2.3. Inicio de Sesión        3
+2.4. Cambio de Contraseña y Cierre de Sesión        4
+3. GUÍA DE USO PARA EL APRENDIZ        4
+3.1. Pantalla de Inicio (Dashboard Aprendiz)        4
+3.2. Módulo de Estado de Ánimo        5
+3.3. Módulo de Diario Personal        5
+3.4. Solicitar Citas de Orientación Psicológica        6
+3.5. Sección de Comunidades y Publicaciones de Bienestar        6
+3.6. Módulo de Formularios y Encuestas        7
+3.7. Uso del Botón de Emergencia (SOS)        7
+4. GUÍA DE USO PARA EL PSICÓLOGO / ORIENTADOR        8
+4.1. Pantalla de Inicio y Panel de Seguimiento        8
+4.2. Consulta de Aprendices y Fichas Asignadas        8
+4.3. Gestión de Citas (Confirmar, Cancelar y Finalizar)        8
+4.4. Lectura de Diarios Autorizados        9
+5. CONFIGURACIÓN Y PERSONALIZACIÓN VISUAL        9
+5.1. Cambio entre Modo Claro y Modo Oscuro        9
+5.2. Selección de Idioma (Español / Inglés)        9
+6. PREGUNTAS FRECUENTES Y SOLUCIÓN DE PROBLEMAS        10
+
+
+
+
+
+
+1. INTRODUCCIÓN Y RECOMENDACIONES IMPORTANTES
+1.1. ¿Qué es SERENA y para qué sirve?
+SERENA es una aplicación web creada para acompañarte en tu día a día, facilitando el cuidado de tu salud mental y tu bienestar emocional dentro del SENA.
+A través de SERENA puedes:
+* Registrar cómo te sientes diariamente y observar tus cambios de ánimo a lo largo del tiempo.
+* Escribir en un diario personal reflexivo.
+* Agendar citas de orientación emocional con los profesionales de Bienestar al Aprendiz.
+* Acceder a contenidos educativos sobre salud mental y desarrollo personal.
+* Disponer de accesos rápidos a líneas de ayuda en situaciones de crisis.
+1.2. ¿A quién está dirigida la plataforma?
+La plataforma distingue dos tipos principales de usuarios:
+1. Aprendices: Quienes utilizan la plataforma para su propio autocuidado, registro diario y solicitud de citas de apoyo.
+2. Psicólogos / Equipo de Bienestar: Quienes gestionan las agendas de orientación, realizan seguimiento a los aprendices asignados y brindan el acompañamiento presencial o virtual.
+
+
+AVISO FUNDAMENTAL SOBRE EMERGENCIAS Y ATENCIÓN CLÍNICA
+1. SERENA NO reemplaza la atención médica o psicológica presencial. No emite diagnósticos clínicos ni prescribe tratamientos.
+2. El Botón SOS facilita números telefónicos institucionales y nacionales para llamar desde tu dispositivo. Guardar un mensaje en el modal de emergencia de la aplicación NO envía de manera automática una patrulla o ambulancia a tu ubicación.
+3. En caso de una crisis emocional grave o riesgo inminente para tu vida o la de alguien más, comunícate de inmediato con la Línea 106, la Línea 123 o acude al centro de salud más cercano.
+2. ACCESO A LA PLATAFORMA
+2.1. Requisitos de Acceso
+Para usar SERENA solo necesitas:
+* Un dispositivo con conexión a internet (computador, tablet o teléfono celular).
+* Un navegador web moderno (Google Chrome, Mozilla Firefox, Microsoft Edge o Safari).
+* Tu correo electrónico institucional o personal y los datos de tu ficha de formación SENA.
+2.2. Registro de Cuenta Nueva (Paso a Paso)
+Si es la primera vez que ingresas a SERENA, sigue estos pasos para crear tu cuenta:
+[ Iniciar Registro ] ➔ [ Elegir Rol ] ➔ [ Datos Personales y Ficha ] ➔ [ Definir Contraseña ] ➔ [ Finalizar ]
+1. Abre la página principal de SERENA en tu navegador.
+2. En la pantalla de entrada, haz clic en el botón "Registrarse" o "Crear Cuenta".
+3. Paso 1 - Selección de Rol: Elige si te estás registrando como Aprendiz o como Psicólogo.
+4. Paso 2 - Información Académica / Institucional:
+   * Selecciona tu Sede y Centro de Formación (por ejemplo: Centro de Metalmecánica - CMTC).
+   * Ingresa tu Programa de Formación y el número de tu Ficha.
+5. Paso 3 - Datos Personales: Escribe tu nombre completo y tu dirección de correo electrónico.
+6. Paso 4 - Seguridad: Crea una contraseña segura de al menos  caracteres y vuelve a escribirla para confirmarla.
+7. Haz clic en "Completar Registro". La plataforma te redirigirá automáticamente a la pantalla de inicio de tu perfil.
+2.3. Inicio de Sesión
+   1. Ingresa a la dirección de SERENA.
+   2. Escribe tu correo electrónico y tu contraseña.
+   3. Haz clic en el botón "Iniciar Sesión".
+2.4. Cambio de Contraseña y Cierre de Sesión
+   * Cerrar Sesión: En el menú lateral o en la esquina superior derecha, haz clic en tu nombre o avatar y selecciona "Cerrar Sesión". Se recomienda cerrar sesión siempre que utilices computadores compartidos en las salas del SENA.
+   * Cambiar Contraseña: Dentro de tu perfil, selecciona la opción "Configuración de Cuenta", ingresa tu contraseña actual, escribe la nueva contraseña y guarda los cambios.
+
+
+3. GUÍA DE USO PARA EL APRENDIZ
+Al ingresar como Aprendiz, verás una barra de navegación a la izquierda (en computadores) o en la parte inferior/menú (en móviles) con acceso a todas las herramientas.
+┌────────────────────────────────────────────────────────┐
+│  SERENA                        [ Modo Oscuro ] [ ES ]  │
+├──────────────┬─────────────────────────────────────────┤
+│ 🏠 Inicio    │ ¡Hola! ¿Cómo te sientes hoy?           │
+│ 😊 Ánimo     │ ┌───────┐ ┌───────┐ ┌───────┐ ┌───────┐ │
+│ 📖 Diario    │ │ 😊    │ │ 😐    │ │ 😔    │ │ 😤    │ │
+│ 📅 Citas     │ └───────┘ └───────┘ └───────┘ └───────┘ │
+│ 👥 Comunidad │ Proxima Cita: Mañana 10:00 AM           │
+│ 🚨 SOS       │                                         │
+└──────────────┴─────────────────────────────────────────┘
+
+3.1. Pantalla de Inicio (Dashboard Aprendiz)
+Es tu centro de control. En esta pantalla encontrarás:
+   * Un saludo personalizado.
+   * Un acceso rápido para registrar tu estado de ánimo del día.
+   * El recordatorio de tu próxima cita de orientación programada.
+   * Acceso directo a las últimas publicaciones de bienestar.
+3.2. Módulo de Estado de Ánimo
+El registro de emociones te ayuda a tomar conciencia de tu salud mental.
+   1. Haz clic en la opción "Estado de Ánimo" del menú.
+   2. Selecciona el icono que mejor represente cómo te sientes en el momento:
+   * Feliz
+   * Calmado / En Paz
+   * Ansioso / Agobiado
+   * Triste
+   * Motivado
+   3. (Opcional) Escribe una breve nota en el campo de texto explicando el motivo de tu emoción (por ejemplo: "Presenté proyecto final", "Me siento fatigado por el transporte").
+   4. Haz clic en "Guardar Registro".
+   5. Consulta tu Historial: En la misma pantalla podrás ver una gráfica interactiva y un calendario que muestran cómo ha variado tu estado de ánimo en los últimos días o semanas.
+3.3. Módulo de Diario Personal
+El diario es un espacio de escritura libre e introspección.
+   1. Haz clic en "Diario" en el menú principal.
+   2. Para escribir una nueva entrada, haz clic en "Nueva Nota".
+   3. Asigna un título y escribe tus reflexiones en el área de texto.
+   4. Control de Privacidad (Interruptor Compartir):
+   * Desactivado (Privado - Opción por defecto): La nota solo la puedes ver tú en tu dispositivo. Ningún orientador ni administrador puede leerla.
+   * Activado (Compartir con Orientador): Autorizas a que el psicólogo asignado a tu ficha pueda leer esta entrada específica para comprender mejor cómo ayudarte durante las sesiones de orientación.
+   5. Haz clic en "Guardar Nota".
+
+
+
+
+
+
+
+
+
+
+3.4. Solicitar Citas de Orientación Psicológica
+[ Seleccionar Módulo Citas ] ➔ [ Elegir Profesional ] ➔ [ Fecha y Hora ] ➔ [ Escribir Motivo ] ➔ [ Confirmar ]
+   1. Ingresa a la sección "Citas".
+   2. Haz clic en el botón "Solicitar Cita".
+   3. Selecciona el orientador o psicólogo disponible en tu centro de formación.
+   4. Elige una fecha en el calendario y selecciona una franja horaria disponible.
+   5. Escribe una descripción breve sobre el motivo de la consulta (por ejemplo: "Orientación vocacional", "Manejo del estrés académico").
+   6. Haz clic en "Confirmar Cita".
+   7. En tu panel de citas verás el estado de la solicitud:
+   * 🟡 Pendiente: El profesional está revisando la disponibilidad.
+   * 🟢 Confirmada: Tu cita está agendada. ¡Asiste puntualmente!
+   * 🔴 Cancelada: La cita no pudo concretarse (recibirás una justificación o sugerencia de nueva fecha).
+   * ⚪ Realizada: La sesión ya se llevó a cabo.
+
+
+3.5. Sección de Comunidades y Publicaciones de Bienestar
+En esta sección puedes leer artículos, consejos sobre hábitos de estudio, ejercicios de respiración, mindfulness y técnicas de autocuidado redactadas por el equipo de Bienestar.
+   * Puedes filtrar publicaciones por categorías.
+   * Puedes reaccionar o guardar artículos de tu interés para leerlos más tarde.
+
+
+
+
+
+
+
+
+3.6. Módulo de Formularios y Encuestas
+Ocasionalmente, el equipo de Bienestar al Aprendiz compartirá cuestionarios breves de caracterización o satisfacción:
+   1. Ingresa a "Formularios".
+   2. Selecciona el formulario activo.
+   3. Responde las preguntas y haz clic en "Enviar Respuestas".
+
+
+3.7. Uso del Botón de Emergencia (SOS)
+El botón SOS de color rojo está visible para que sepa exactamente a dónde acudir en momentos de alta vulnerabilidad.
+   1. Haz clic en el botón SOS (esquina de la pantalla o menú lateral).
+   2. Se abrirá una ventana flotante con:
+   * Botones de llamada directa: Al tocarlos desde tu teléfono celular, iniciarán una llamada telefónica a las líneas nacionales de apoyo emocional (Línea 106 / Línea 123) o al PBX de Bienestar de tu Centro.
+   * Directorio Institucional: Correos y contactos físicos de la oficina de Bienestar al Aprendiz.
+   * Formulario de Solicitud Prioritaria: Permite registrar tus datos para que el equipo consulte tus datos al abrir el sistema.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4. GUÍA DE USO PARA EL PSICÓLOGO / ORIENTADOR
+Al ingresar con el rol de Psicólogo, la plataforma adopta una interfaz orientada a la gestión y seguimiento del bienestar de los aprendices.
+
+
+4.1. Pantalla de Inicio y Panel de Seguimiento
+El panel principal del profesional muestra:
+   * El resumen de citas agendadas para el día de hoy.
+   * Solicitudes de citas pendientes por confirmar o rechazar.
+   * Alertas de aprendices asignados a sus fichas que han registrado estados de ánimo de baja energía (tristeza/ansiedad consecutiva) y que requieren seguimiento.
+
+
+4.2. Consulta de Aprendices y Fichas Asignadas
+   1. Haz clic en "Aprendices" o "Fichas".
+   2. Selecciona la ficha de formación correspondiente (por ejemplo: Ficha 2670123 - CMTC).
+   3. Verás el listado de aprendices matriculados. Al seleccionar un aprendiz, podrás consultar:
+   * Historial de citas atendidas.
+   * Resumen estadístico de sus registros de estado de ánimo (gráficas agregadas).
+   * Entradas de diario que el aprendiz haya marcado explícitamente como compartidas.
+
+
+4.3. Gestión de Citas (Confirmar, Cancelar y Finalizar)
+   1. Ve al módulo "Gestión de Citas".
+   2. Aprobar Cita: Haz clic en una cita con estado Pendiente, asigna el lugar (consultorio presencial o enlace de videollamada) y haz clic en "Confirmar". El aprendiz recibirá la actualización en su pantalla.
+   3. Finalizar Cita: Una vez atendida la orientación, marca la cita como Realizada.
+   4. (Opcional) Añade una nota de seguimiento interna en la historia de orientación del aprendiz. Esta nota es de uso privado del equipo profesional.
+
+
+4.4. Lectura de Diarios Autorizados
+   1. Ingresa a la ficha del aprendiz o al módulo "Diarios Compartidos".
+   2. Solo se desplegarán las entradas que el aprendiz autorizó compartir mediante la casilla de verificación en su propio diario.
+   3. Nota de ética profesional: El contenido de estas notas debe ser tratado bajo estricta reserva profesional de acuerdo con la normatividad de ética en psicología.
+
+
+5. CONFIGURACIÓN Y PERSONALIZACIÓN VISUAL
+SERENA incluye opciones para adaptar la experiencia a tus preferencias de lectura y accesibilidad.
+5.1. Cambio entre Modo Claro y Modo Oscuro
+   * En la barra superior o menú de perfil, ubica el icono del Sol / Luna (☀️ / 🌙).
+   * Modo Claro: Ideal para entornos iluminados o computadores de escritorio.
+   * Modo Oscuro: Reduce la fatiga visual en ambientes con poca luz y disminuye el consumo de batería en dispositivos móviles.
+5.2. Selección de Idioma (Español / Inglés)
+   * Haz clic en el selector de idioma (etiquetado como ES / EN).
+   * La interfaz traducirá los botones, menús e instrucciones principales al idioma seleccionado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6. PREGUNTAS FRECUENTES Y SOLUCIÓN DE PROBLEMAS
+¿Mis compañeros de clase pueden ver lo que escribo en mi diario o mi estado de ánimo?
+No. Tu información es totalmente privada. Ningún otro aprendiz o compañero de ficha tiene acceso a tus registros de ánimo, tu diario ni tus citas.
+¿El psicólogo puede leer todo lo que escribo en mi diario?
+No. El psicólogo únicamente puede leer aquellas notas específicas donde activaste voluntariamente la opción "Compartir con orientador". Las notas privadas permanecen estrictamente visibles solo para ti.
+Escribí una solicitud de cita pero sigue en estado "Pendiente", ¿qué debo hacer?
+Los psicólogos revisan las solicitudes en su jornada laboral. Si necesitas orientación urgente y la cita no ha sido confirmada, te sugerimos acercarte directamente a la oficina de Bienestar al Aprendiz de tu centro o presionar el botón SOS para comunicarte con las líneas telefónicas directas.
+Olvidé mi contraseña de acceso, ¿cómo la recupero?
+En la pantalla de inicio de sesión, haz clic en "¿Olvidaste tu contraseña?", ingresa el correo electrónico con el que te registraste y sigue las instrucciones que recibirás en tu bandeja de entrada.
+La página no carga o muestra un error de conexión
+   1. Verifica que tu dispositivo tenga conexión a internet.
+   2. Intenta recargar la página presionando F5 o Ctrl + R.
+   3. Limpia la memoria caché de tu navegador o intenta ingresar en una ventana de incógnito.
+   4. Si el problema persiste, informa al administrador del sistema o al equipo de soporte de tu Centro de Formación.
+
+
+
+
+SERENA — Tu compañera Digital para el bienestar emocional.
+Servicio Nacional de Aprendizaje (SENA)

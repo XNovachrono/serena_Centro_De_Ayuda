@@ -1,0 +1,356 @@
+﻿MANUAL DE IDENTIDAD Y GUÍA DE ESTILO DE MARCA
+TABLA DE CONTENIDO
+1. INTRODUCCIÓN Y MANIFIESTO DE MARCA        3
+1.1. Origen y Propósito de SERENA        4
+1.2. Misión, Visión y Valores Fundamentales        4
+1.3. Posicionamiento y Eslogan        5
+1.4. Tono de Voz y Arquetipo de Marca        5
+2. IDENTIDAD VISUAL Y LOGOTIPO        7
+2.1. Concepto y Significado de la Marca Gráfica        7
+2.2. Anatomía del Imagotipo        8
+      2.3. Versiones Oficiales de la Marca        8
+2.4. Área de Reserva y Tamaño Mínimo        8
+2.5. Usos Incorrectos y Prohibiciones        9
+3. SISTEMA DE COLOR        9
+3.1. Paleta Cromática Principal        9
+3.2. Paleta Cromática Secundaria y Neutros        10
+3.3. Paleta Funcional y de Estados (UI)        11
+3.4. Matriz de Contraste y Accesibilidad (WCAG 2.1)        11
+3.5. Convivencia con la Identidad Institucional del SENA        11
+4. TIPOGRAFÍA        12
+4.1. Tipografía Corporativa y UI        12
+4.2. Jerarquía Tipográfica y Escala Web        12
+4.3. Sistema de Fuentes Alternativas (Fallbacks)        13
+4.4. Reglas de Composición        13
+5. LENGUAJE VISUAL Y COMPONENTES UI        13
+5.1. Iconografía Lineal (Sistema Lucide)        13
+5.2. Ilustraciones y Simbología de Estados de Ánimo        14
+5.3. Estilo de Tarjetas, Sombras y Bordes (Design Tokens)        14
+5.4. Botón de Emergencia (SOS) y Componentes Críticos        14
+6. APLICACIONES UI/UX Y COMUNICACIÓN INSTITUCIONAL        15
+6.1. Aplicación en Modo Claro y Modo Oscuro        15
+6.2. Normas para Material Impreso, Banners y Piezas Digitales        15
+6.3. Lista de Verificación para Implementación de Marca (Brand Checklist)        16
+FIRMA Y APROBACIÓN DE LA GUÍA        16
+1. INTRODUCCIÓN Y MANIFIESTO DE MARCA
+1.1. Origen y Propósito de SERENA
+SERENA nace como una iniciativa tecnológica orientada a ofrecer un espacio seguro, accesible y empático de acompañamiento psicológico y bienestar emocional para los aprendices, instructores y personal administrativo de la comunidad SENA (con foco inicial en el Centro de Metalmecánica - CMTC, y proyección hacia centros como CMM y CEET).
+SERENA no es un servicio clínico autónomo ni un reemplazo para la atención médica o psicológica presencial, ni pretende sustituir las líneas de atención de emergencias institucionales. Su propósito es actuar como una compañera digital que facilita la autoevaluación diaria, el registro reflexivo en diario personal, el agendamiento de citas de orientación y el puente de comunicación entre el aprendiz y el equipo de Bienestar al Aprendiz.
+1.2. Misión, Visión y Valores Fundamentales
+Misión
+"Facilitar a la comunidad SENA el acceso a herramientas digitales intuitivas de bienestar y orientación psicológica, promoviendo el autocuidado diario, la empatía comunitaria y el acompañamiento oportuno por parte de los profesionales de la institución."
+Visión
+"Ser la plataforma digital de referencia en apoyo emocional para el SENA, reconocida por su cercanía, confiabilidad, respeto por la privacidad del usuario y su capacidad para fortalecer integralmente las rutas de bienestar institucionales."
+Valores Fundamentales
+* Empatía y Escucha Activa: Validamos todas las emociones sin juzgar.
+* Confidencialidad y Respeto: Salvaguardamos la privacidad del usuario y promovemos la autonomía en la toma de decisiones sobre su información.
+* Accesibilidad y Sencillez: Diseñamos experiencias libres de fricción, barreras estigmatizantes o jerargías complejas.
+* Oportunidad y Prevención: Conectamos de manera eficiente las necesidades de apoyo emocional con los canales de atención correspondientes.
+
+
+1.3. Posicionamiento y Eslogan
+
+
+* Nombre de Marca: SERENA
+* Eslogan Principal: "Tu compañera Digital para el bienestar emocional"
+* Descriptor Funcional: Plataforma de Bienestar Emocional y Acompañamiento Psicológico SENA.
+1.4. Tono de Voz y Arquetipo de Marca
+Arquetipo de Marca: El Cuidador / El Compañero
+SERENA habla desde una postura cálida, atenta, serena y estructurada. Ofrece contención sin sonar clínica o fría, y comunica seguridad sin ser autoritaria.
+       [ CÁLIDO & SERENO ]
+               │
+[ CLÍNICO ] ───┼─── [ INFORMAL / COLOQUIAL ]
+               │
+       [ ESTRUCTURADO ]
+
+
+
+
+
+
+
+Guía de Tono de Voz
+Contexto
+	Lo que SERENA dice
+	Lo que SERENA NUNCA dice
+	Bienvenida
+	"Hola, ¿cómo te sientes el día de hoy? Estamos aquí para acompañarte."
+	"¿Cuál es tu patología hoy? Inicia sesión para continuar."
+	Registro de Ánimo
+	"Gracias por compartir tu estado de ánimo. Guardar lo que sientes es el primer paso."
+	"Tu nivel de ansiedad es alto. Debes ser corregido."
+	Alertas / SOS
+	"Si sientes que necesitas ayuda inmediata, conéctate con una línea de apoyo directa."
+	"¡ALERTA MÁXIMA! Su estado mental es crítico."
+	Diario Personal
+	"Este espacio es tuyo. Tú decides si deseas compartir esta nota con tu psicólogo."
+	"El sistema transmitirá tus pensamientos al administrador."
+	
+
+
+
+
+
+2. IDENTIDAD VISUAL Y LOGOTIPO
+2.1. Concepto y Significado de la Marca Gráfica
+El imagotipo de SERENA sintetiza tres conceptos centrales: 
+Protección, Naturaleza/Crecimiento y Pausa.
+* El Árbol: Representa estabilidad, raíces profundas, crecimiento personal y la institución (SENA) como un techo protector.
+* La Figura Humana: Representa al aprendiz en postura de introspección y descanso bajo la copa del árbol, simbolizando la toma de una pausa para reconectar con sus emociones.
+* El Trazo Orgánico y Continuo: Representa fluidez, cercanía y accesibilidad.
+
+
+  
+
+
+
+
+
+
+
+2.2. Anatomía del Imagotipo
+La marca se compone de dos elementos fundamentales:
+1. Isotipo / Símbolo: La ilustración del personaje sentado bajo el árbol.
+2. Logotipo / Tipografía nominativa: La palabra "SERENA" en tipografía Plus Jakarta Sans Bold, con espaciado (letter-spacing) suave.
+2.3. Versiones Oficiales de la Marca
+1. Versión Principal (Full Color - Fondo Claro): Isotipo en Morado Principal (#7E22CE) sobre fondo de aplicación (#FAF9FF o #FFFFFF), con tipografía en Slate Oscuro (#0F172A).
+2. Versión Modo Oscuro (Dark Theme): Isotipo en Soft Lavender (#F3E8FF) o Morado Vibrante (#A855F7), con texto en Blanco Puro (#FFFFFF) sobre fondo Slate/Morado Oscuro (#0F172A / #1E1B4B).
+3. Versión Monocromática (Negro / Blanco): Para impresión a una sola tinta o documentos oficiales en escala de grises.
+4. Favicon / Icono de App: Únicamente el isotipo (árbol con la figura humana) encapsulado en un contenedor circular o cuadrado con bordes suavemente redondeados (rounded-2xl).
+2.4. Área de Reserva y Tamaño Mínimo
+Área de Reserva ()
+El área de protección alrededor del logotipo equivale a la altura de la letra "E" de la palabra SERENA (). Ningún texto, borde, fotografía o elemento gráfico ajeno a la marca debe invadir esta zona.
+$$\text{Zona de Aislamiento} = 1X \quad \text{en todos los cuatro costados}$$
+Tamaños Mínimos
+* Pantalla (Digital): Ancho mínimo de la versión horizontal completa = $120\text{ px}$. Ancho mínimo del Isotipo solo (Favicon) = $24\text{ px} \times 24\text{ px}$.
+* Impresión (Física): Ancho mínimo del imagotipo completo = $35\text{ mm}$.
+2.5. Usos Incorrectos y Prohibiciones
+Para mantener la integridad visual y la percepción de seriedad de la marca, queda estrictamente prohibido:
+* Alterar las proporciones del imagotipo (estirar o comprimir vertical u horizontalmente).
+* Cambiar los colores oficiales por gradientes fluorescentes o tonos fuera de la paleta.
+* Añadir biselados, sombras paraleras pesadas o efectos 3D de néon al trazo.
+* Utilizar el Isotipo sin su área de reserva adecuada.
+* Colocar el logotipo sobre fondos fotográficos complejos de bajo contraste sin una máscara de protección neutra.
+* Reemplazar la tipografía de la marca por tipografías fantasiosas, Serif o Script.
+3. SISTEMA DE COLOR
+El sistema de color de SERENA se estructura para generar sensaciones de calma, serenidad y profesionalismo. Combina tonos morados y lavandas (que transmiten espiritualidad, tranquilidad e introspección) con acentos en verde (crecimiento, salud y equilibrio) y rojo funcional para emergencias.
+3.1. Paleta Cromática Principal
+
+
+SERENA PURPLE:  #7E22CE 
+
+
+DEEP VELVET: #581C87
+
+
+SOFT LAVENDER: #F3E8FF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fichas Técnicas de Colores Primarios
+
+
+* SERENA Purple (Morado Principal)
+   * HEX: #7E22CE
+   * RGB: 
+   * CMYK: $65\%, 90\%, 0\%, 0\%$
+   * HSL: $272^\circ, 72\%, 47\%$
+   * Uso: Botones primarios, encabezados principales, iconos destacados, bordes activos.
+   * Deep Velvet (Morado Oscuro / Noche)
+   * HEX: #581C87
+   * RGB: 
+   * CMYK: $75\%, 98\%, 10\%, 5\%$
+   * HSL: $274^\circ, 66\%, 32\%$
+   * Uso: Barra lateral en modo oscuro, texto sobre fondos lavanda claros, elementos de alto peso visual.
+      * Soft Lavender (Lavanda Claro)
+      * HEX: #F3E8FF
+      * RGB: 
+      * CMYK: $5\%, 10\%, 0\%, 0\%$
+      * HSL: $269^\circ, 100\%, 95\%$
+      * Uso: Fondos de tarjetas secundarias, contenedores de chat, resaltados suaves.
+3.2. Paleta Cromática Secundaria y Neutros
+         * Pure Tint (Fondo de Aplicación): #FAF9FF — RGB: 
+         * Clean Surface (Fondo de Tarjeta/Panel): #FFFFFF — RGB: 
+         * Dark Slate (Texto Principal): #0F172A — RGB: 
+         * Muted Slate (Texto Secundario): #64748B — RGB: 
+         * Light Border (Bordes Neutros): #E2E8F0 — RGB: 
+
+
+
+
+
+
+3.3. Paleta Funcional y de Estados (UI)
+            * Verde Esperanza / Bienestar (Éxito & Balance): #39A900 / #22C55E
+            * HEX: #39A900 (Acento verde de armonía)
+            * Uso: Confirmaciones, badges de citas aprobadas, indicador de estado motividado/calmado.
+            * Alerta SOS / Emergencia (Atención Inmediata): #EF4444 / #DC2626
+            * HEX: #DC2626
+            * Uso: Botón flotante SOS, avisos de crisis, cancelación de citas.
+            * Ánimo Ansioso / Advertencia: #F59E0B (Ámbar)
+            * Ánimo Triste / Introspectivo: #3B82F6 (Azul Tranquilo)
+3.4. Matriz de Contraste y Accesibilidad (WCAG 2.1)
+Para garantizar la lectura clara a personas con deficiencias visuales o en pantallas con bajo brillo:
+            * Texto Dark Slate (#0F172A) sobre Fondo Pure Tint (#FAF9FF):
+            * Ratio de contraste:   Cumple WCAG AAA (Mínimo requerido ).
+               * Texto Blanco (#FFFFFF) sobre Botón SERENA Purple (#7E22CE):
+               * Ratio de contraste:   Cumple WCAG AA (Mínimo requerido ).
+                  * Texto Muted Slate (#64748B) sobre Soft Lavender (#F3E8FF):
+                  * Ratio de contraste:   Cumple WCAG AA.
+3.5. Convivencia con la Identidad Institucional del SENA
+SERENA es un sistema complementario del SENA. Cuando deba presentarse junto a los símbolos institucionales del SENA:
+                     1. El escudo/logotipo del SENA y el de SERENA deberán estar separados por una línea vertical divisoria neutra (#CBD5E1).
+                     2. El logo del SENA mantendrá su color oficial verde institucional (o blanco según la pieza).
+                     3. SERENA conservará su imagotipo morado sin distorsionar su color para forzar el verde SENA en la marca principal, garantizando la identidad propia del programa de salud mental.
+4. TIPOGRAFÍA
+4.1. Tipografía Corporativa y UI
+La tipografía oficial de SERENA es Plus Jakarta Sans, una fuente Sans-Serif geométrica, moderna, altamente legible en pantallas digitales de cualquier resolución y proyectada con un carácter amigable.
+PLUS JAKARTA SANS
+Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm
+Nn Ññ Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
+1 2 3 4 5 6 7 8 9 0 ! ? @ # $ % & * ( )
+4.2. Jerarquía Tipográfica y Escala Web
+Nivel
+	Peso (Weight)
+	Tamaño (rem / px)
+	Interlineado (Line-Height)
+	Uso Principal
+	H1 - Título Principal
+	Bold ()
+	$2.25\text{ rem}$ ($36\text{ px}$)
+	 ($43.2\text{ px}$)
+	Encabezados de pantalla principales
+	H2 - Subtítulo de Sección
+	SemiBold ()
+	$1.5\text{ rem}$ ($24\text{ px}$)
+	 ($31.2\text{ px}$)
+	Títulos de tarjetas y módulos
+	H3 - Encabezado Menor
+	Medium ()
+	$1.125\text{ rem}$ ($18\text{ px}$)
+	 ($25.2\text{ px}$)
+	Títulos de modales y widgets
+	Body - Texto Principal
+	Regular ()
+	$1\text{ rem}$ ($16\text{ px}$)
+	 ($24\text{ px}$)
+	Párrafos, entradas del diario, guías
+	Caption / Small
+	Regular ()
+	$0.875\text{ rem}$ ($14\text{ px}$)
+	 ($19.6\text{ px}$)
+	Fechas, metadatos, etiquetas secundarias
+	Button Text
+	SemiBold ()
+	$0.875\text{ rem}$ ($14\text{ px}$)
+	 ($14\text{ px}$)
+	Acciones primarias y secundarias
+	4.3. Sistema de Fuentes Alternativas (Fallbacks)
+En caso de fallo en la carga de la tipografía remota desde Google Fonts, la aplicación utilizará la siguiente cadena de fuentes del sistema:
+font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+4.4. Reglas de Composición
+                     * Alineación: El texto descriptivo y de cuerpo debe alinearse preferentemente a la izquierda para facilitar la lectura de personas con dislexia o fatiga cognitiva.
+                     * Longitud de línea recomendada: Entre  y  caracteres por línea en textos largos (como el diario o las guías de bienestar).
+                     * Mayúsculas Sostenidas: Se prohíbe el uso de mayúsculas sostenidas en párrafos largos. Solo se permiten en siglas institucionales (SENA, CMTC) o etiquetas de tipo Badge con letter-spacing amplio.
+
+
+
+
+
+
+
+
+
+
+5. LENGUAJE VISUAL Y COMPONENTES UI
+5.1. Iconografía Lineal (Sistema Lucide)
+SERENA utiliza la biblioteca de iconos Lucide React. La iconografía debe transmitir ligereza, claridad y amigabilidad.
+                        * Estilo: Trazo lineal (Stroke).
+                        * Grosor de Trazo (Grosor/Stroke Width): $1.75\text{ px}$ a $2\text{ px}$.
+                        * Terminaciones: Redondeadas (Linecap: round, Linejoin: round).
+                        * Color de Iconos: Heredan el color del texto contenedor o el morado #7E22CE para estados activos.
+[Icono: Heart Handshake]  ─── Orientación / Citas
+[Icono: Smile / Meh / Frown] ─── Estado de Ánimo
+[Icono: BookOpen]         ─── Diario Personal
+[Icono: PhoneCall / SOS]  ─── Emergencias
+5.2. Ilustraciones y Simbología de Estados de Ánimo
+Los estados de ánimo del módulo de autoevaluación deben representarse mediante una estética cohesiva de rostros e ilustraciones simplificadas:
+                        1. Feliz / Radiante: Tono verde calidez (#22C55E), expresión sonriente y expansiva.
+                        2. Calmado / En Paz: Tono lavanda/azul (#6366F1), ojos suavemente cerrados o expresión neutra serena.
+                        3. Motivado / Entusiasmado: Tono amarillo cálido (#EAB308), destellos suaves alrededor.
+                        4. Ansioso / Agobiado: Tono ámbar/naranja (#F97316), expresión pensativa o de incertidumbre.
+                        5. Triste / Desanimado: Tono azul sereno (#3B82F6), postura de recogimiento.
+5.3. Estilo de Tarjetas, Sombras y Bordes (Design Tokens)
+La interfaz visual de SERENA basa su estructura en contenedores suaves y envolventes que evitan bordes afilados o agresivos.
+/* Tokens de Estilo CSS / Tailwind */
+--radius-card: 1rem;       /* rounded-2xl (16px) */
+--radius-button: 0.75rem;  /* rounded-xl (12px) */
+--radius-badge: 9999px;    /* rounded-full */
+
+
+--shadow-soft: 0 4px 20px -2px rgba(126, 34, 206, 0.06);
+--shadow-elevated: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
+5.4. Botón de Emergencia (SOS) y Componentes Críticos
+El botón de acceso a ayuda inmediata (SOS) es un componente de alta prioridad:
+                        * Ubicación: Visible en la barra de navegación o fijado en la interfaz de usuario.
+                        * Color: Fondo Rojo Alerta (#DC2626) con texto e icono en blanco puro (#FFFFFF).
+                        * Interacción: Debe abrir un panel modal interactivo que ofrezca números de contacto rápido sin entorpecer ni bloquear la salida inmediata del usuario.
+                        * Aviso de exención de responsabilidad en UI: Debe acompañarse siempre de la nota: "En caso de crisis o riesgo inminente, comunícate directamente con la Línea 106 o 123 de tu ciudad."
+
+
+
+
+6. APLICACIONES UI/UX Y COMUNICACIÓN INSTITUCIONAL
+6.1. Aplicación en Modo Claro y Modo Oscuro
+MODO CLARO (Default)
+┌────────────────────────────────────────────────────────┐
+│  Background: #FAF9FF                                   │
+│  Card Surface: #FFFFFF (Border: #E2E8F0)               │
+│  Primary Text: #0F172A                                 │
+│  Brand Accent: #7E22CE                                 │
+└────────────────────────────────────────────────────────┘
+
+
+MODO OSCURO (Night Focus)
+┌────────────────────────────────────────────────────────┐
+│  Background: #0F172A                                   │
+│  Card Surface: #1E293B (Border: #334155)               │
+│  Primary Text: #F8FAFC                                 │
+│  Brand Accent: #A855F7                                 │
+└────────────────────────────────────────────────────────┘
+6.2. Normas para Material Impreso, Banners y Piezas Digitales
+Para afiches promocionales, folletos informativos de Bienestar al Aprendiz y banners web:
+                        1. Fondo: Se recomienda usar fondos lavanda suave (#F3E8FF) o combinaciones con ondas fluidas en degradado sutil (#7E22CE a #581C87).
+                        2. Imágenes de personas: Priorizar fotografías de aprendices reales en entornos de aprendizaje o espacios verdes del centro, evitando imágenes genéricas de angustia o desesperación estigmatizantes.
+                        3. Código QR de Acceso: En afiches físicos, el código QR para ingresar a SERENA debe incluir el Isotipo del árbol en el centro y un marco descriptivo: "Escanea y registra tu día en SERENA".
+6.3. Lista de Verificación para Implementación de Marca (Brand Checklist)
+Antes de publicar cualquier pantalla, módulo o pieza de comunicación de SERENA, verifique:
+                        * ¿El imagotipo mantiene sus proporciones y su área de reserva sin traslapes?
+                        * ¿Se utiliza la tipografía Plus Jakarta Sans en los pesos aprobados?
+                        * ¿El contraste del texto sobre el fondo cumple como mínimo el estándar WCAG AA?
+                        * ¿El tono del mensaje es constructivo, empático y libre de diagnósticos clínicos automáticos?
+                        * ¿El botón SOS permanece accesible y claramente diferenciado?
+                        * ¿El uso del color morado preserva la armonía sin saturar visualmente al usuario?
+
+
+
+
+Equipo de Desarrollo y Diseño UI/UX SERENA
+Proyecto de Acompañamiento Emocional — SENA CMTC
+Versión de la Guía: 1.0.0
+Fecha de Emisión: Noviembre 2026

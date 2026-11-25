@@ -1,0 +1,725 @@
+﻿MANUAL TÉCNICO Y ARQUITECTURA DE SOFTWARE
+SERENA — Tu compañera Digital para el bienestar emocional
+Sistema Web de Acompañamiento Psicológico y Salud Emocional (SENA)
+________________
+
+
+CONTENIDO
+1. Información General y Arquitectura del Sistema
+   * 1.1. Resumen Ejecutivo Técnico
+   * 1.2. Diagrama de Arquitectura Multicapa
+   * 1.3. Stack Tecnológico y Versiones
+2. Estructura y Componentes del Frontend (Client-Side)
+   * 2.1. Estructura de Directorios del Proyecto React
+   * 2.2. Tecnologías y Librerías Principales
+   * 2.3. Vistas y Componentes Principales
+   * 2.4. Capa de Servicios de Integración (serena-api.service.ts)
+   * 2.5. Estrategia de Persistencia Híbrida (API vs localStorage)
+3. Estructura y Componentes del Backend (Server-Side)
+   * 3.1. Estructura de Solución C# ASP.NET Core
+   * 3.2. Catálogo de Controladores y Endpoints HTTP
+   * 3.3. Capa de Datos y Repositorios (DatabaseService.cs)
+   * 3.4. Configuración del Pipeline de Middleware (Program.cs)
+4. Modelo de Base de Datos y Entidades (SQL Server)
+   * 4.1. Diagrama Entidad-Relación Conceptual
+   * 4.2. Diccionario de Datos y Mapeo de Entidades
+   * 4.3. Migraciones e Inicialización de Datos (Seeding)
+5. Configuración del Entorno, Docker y Despliegue
+   * 5.1. Variables de Entorno y Secrecia
+   * 5.2. Orquestación con Docker Compose
+   * 5.3. Guía Paso a Paso para Instalación y Ejecución Local
+6. Auditoría de Seguridad, Diagnóstico y Deuda Técnica
+   * 6.1. Incompatibilidad de Serialización JSON en Login
+   * 6.2. Autenticación JWT y Falta de Middleware de Autorización
+   * 6.3. Confidencialidad y Simulación de Cifrado en Diarios
+   * 6.4. Persistencia Local del Módulo de Emergencia SOS
+   * 6.5. Inconsistencias en el Control de Acceso basado en Roles (RBAC)
+7. Matriz de Recomendaciones y Plan de Mitigación
+1. INFORMACIÓN GENERAL Y ARQUITECTURA DEL SISTEMA
+1.1. Resumen Ejecutivo Técnico
+SERENA es una solución web orientada a la gestión del bienestar emocional de la comunidad SENA (con enfoque inicial en el Centro de Metalmecánica - CMTC). La aplicación sigue una arquitectura desacoplada de Cliente-Servidor (Single Page Application + RESTful Web API), conectada a una base de datos relacional engine SQL Server.
+El sistema permite la interacción de dos perfiles principales (Aprendiz y Psicólogo/Orientador), facilitando el seguimiento de estados de ánimo, redacción de diarios personales, agendamiento de citas, consulta de publicaciones educativas y gestión de emergencias emocionales.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.2. Diagrama de Arquitectura Multicapa
+┌────────────────────────────────────────────────────────────────────────┐
+│                        CAPA DE PRESENTACIÓN                            │
+│    Navegador Web (React 19 + TypeScript + Vite + Tailwind CSS 4)      │
+│  ┌────────────────────────┐  ┌──────────────────────────────────────┐  │
+│  │ Vistas Aprendiz / Psico│  │ App.tsx (Enrutamiento & Estado)      │  │
+│  └───────────┬────────────┘  └──────────────────┬───────────────────┘  │
+└──────────────┼──────────────────────────────────┼──────────────────────┘
+               │ HTTP / JSON                      │ LocalStorage Fallback
+               ▼                                  ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                      CAPA DE SERVICIOS (BACKEND)                       │
+│             ASP.NET Core Web API (.NET 8) en puerto 5185               │
+│  ┌──────────────────────────────────────────────────────────────────┐  │
+│  │ API Controllers (/api/login, /api/cita, /api/diario, etc.)       │  │
+│  └──────────────────────────────┬───────────────────────────────────┘  │
+│                                 │ ORM (Entity Framework Core 8)        │
+└─────────────────────────────────┼──────────────────────────────────────┘
+                                  ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                         CAPA DE PERSISTENCIA                           │
+│               SQL Server 2022 Database Engine (Puerto 1433)             │
+│  Tables: Usuarios, Roles, Citas, Diarios, EstadoAnimos, Emergencias... │
+└────────────────────────────────────────────────────────────────────────┘
+1.3. Stack Tecnológico y Versiones
+Capa / Componente
+	Tecnología
+	Versión
+	Propósito / Función
+	Frontend Runtime
+	Node.js
+	
+	Entorno de ejecución para construcción de cliente
+	Frontend Framework
+	React
+	
+	Biblioteca de interfaz de usuario basada en componentes
+	Lenguaje Frontend
+	TypeScript
+	
+	Tipado estático para código cliente
+	Tooling & Bundler
+	Vite
+	
+	Servidor de desarrollo y empaquetador ultrarrápido
+	CSS Framework
+	Tailwind CSS
+	
+	Estilizado basado en clases de utilidad y variables CSS
+	Iconografía
+	Lucide React
+	
+	Sistema de iconos vectoriales ligeros
+	Backend Runtime
+	.NET SDK
+	
+	Framework de ejecución del servidor
+	Backend Framework
+	ASP.NET Core Web API
+	
+	Construcción de controladores y endpoints RESTful
+	ORM
+	Entity Framework Core
+	
+	Mapeo objeto-relacional para interacción con BD
+	Base de Datos
+	Microsoft SQL Server
+	
+	Sistema de gestión de base de datos relacional
+	Contenedores
+	Docker & Docker Compose
+	
+	Virtualización y orquestación de servicios
+	
+
+
+
+
+
+
+
+2. ESTRUCTURA Y COMPONENTES DEL FRONTEND (CLIENT-SIDE)
+2.1. Estructura de Directorios del Proyecto React
+El frontend se organiza modularmente en la carpeta /frontend:
+frontend/
+├── public/
+│   └── IMG/               # Assets gráficos, logos e instrucciones
+├── src/
+│   ├── assets/            # Estilos globales y fuentes
+│   ├── components/        # Componentes de UI por módulo y vista
+│   │   ├── Header.tsx            # Navegación superior y selector de tema
+│   │   ├── SidebarLeft.tsx       # Menú lateral navegable según rol
+│   │   ├── LoginView.tsx         # Vistas de ingreso y registro paso a paso
+│   │   ├── EstadoDeAnimoView.tsx # Módulo de registro y gráfica de ánimo
+│   │   ├── DiarioView.tsx        # Módulo de diario personal y privacidad
+│   │   ├── CitasView.tsx         # Agendamiento y gestión de citas
+│   │   └── EmergenciaModal.tsx   # Modal de atención SOS prioritaria
+│   ├── services/
+│   │   └── serena-api.service.ts # Cliente HTTP y métodos de integración
+│   ├── types/
+│   │   └── serena.types.ts       # Interfaces y tipos de TypeScript
+│   ├── App.tsx                   # Componente raíz y control de rutas
+│   ├── main.tsx                  # Punto de entrada DOM de React
+│   └── index.css                 # Importación de Tailwind y tokens CSS
+├── package.json                  # Dependencias y scripts del frontend
+└── vite.config.ts                # Configuración de Vite y Proxy HTTP
+
+2.2. Tecnologías y Librerías Principales
+* Vite Dev Server: Configurado en vite.config.ts para servir el frontend en el puerto $3000$ y redirigir las peticiones /api mediante un proxy inverso hacia http://localhost:5185.
+* Lucide React: Proporciona componentes de iconos dinámicos (<Smile />, <BookOpen />, <Calendar />, <AlertTriangle />).
+
+
+2.3. Vistas y Componentes Principales
+1. App.tsx: Mantiene el estado global de la sesión (currentUser, activeTab, isDarkMode, language). Renderiza la navegación principal y decide qué vista desplegar.
+2. LoginView.tsx: Controla el flujo de autenticación y el asistente de registro en  pasos (Rol  Centro/Ficha  Datos Personales  Credenciales).
+3. EstadoDeAnimoView.tsx: Permite la selección interactiva de emociones y dibuja el historial mediante barras o indicadores de progreso.
+4. DiarioView.tsx: Ofrece el editor de notas personales con el interruptor (toggle) para alternar entre el estado privado y compartido.
+5. CitasView.tsx: Permite a los aprendices reservar franjas horarias y a los psicólogos gestionar solicitudes.
+6. EmergenciaModal.tsx: Renderiza las líneas telefónicas institucionales/nacionales y el formulario de contacto directo.
+2.4. Capa de Servicios de Integración (serena-api.service.ts)
+El archivo serena-api.service.ts abstrae las llamadas a la API mediante la API nativa fetch. Contiene funciones clave como:
+   * loginEnApi(correo, contraseña): Realiza una petición POST a /api/login.
+   * registrarUsuarioEnApi(datos): Envía peticiones POST a /api/login/registrar.
+   * getCitasDesdeApi() / crearCitaEnApi(cita): Consulta y crea registros en /api/cita.
+   * getDiariosDesdeApi(usuarioId) / crearDiarioEnApi(diario): Gestiona las notas en /api/diario.
+   * registrarEstadoAnimoEnApi(estado): Transmite autoevaluaciones emocionales a /api/estado-animo-usuario.
+2.5. Estrategia de Persistencia Híbrida
+El sistema implementa una lógica de tolerancia a fallos:
+[ Petición de Datos ]
+        │
+        ▼
+¿API Disponible? ─── SI ───► [ Guardar / Leer en SQL Server ]
+        │
+        NO
+        ▼
+[ Guardar / Leer en localStorage del Navegador ]
+3. ESTRUCTURA Y COMPONENTES DEL BACKEND (SERVER-SIDE)
+3.1. Estructura de Solución C# ASP.NET Core
+El backend reside en la carpeta /backend:
+backend/
+├── Controllers/                    # API Controllers REST
+│   ├── login_controller.cs         # Auth & Registro
+│   ├── cita_Controller.cs          # Gestión de citas
+│   ├── diario_controller.cs        # Gestión del diario personal
+│   ├── estado_animo_usuario_controller.cs # Registros de ánimo
+│   ├── publicaciones_controller.cs # Publicaciones de bienestar
+│   ├── formulario_controller.cs    # Encuestas y formularios
+│   └── emergencia_controller.cs    # Registros SOS
+├── models/                         # Entidades EF Core C#
+│   ├── Usuario.cs
+│   ├── Cita.cs
+│   ├── Diario.cs
+│   ├── EstadoAnimoUsuario.cs
+│   └── Emergencia.cs
+├── DatabaseService.cs              # DbContext y configuración EF Core
+├── Program.cs                      # Configuración de servicios y pipeline
+├── appsettings.json               # Configuración de base de datos y JWT
+└── WebApplication1.csproj         # Proyecto ASP.NET Core (.NET 8)
+
+
+
+
+
+3.2. Catálogo de Controladores y Endpoints API
+Controlador
+	Ruta Base
+	Método
+	Sub-Ruta
+	Descripción
+	login_controller
+	/api/login
+	POST
+	/
+	Valida credenciales y genera respuesta de autenticación
+	login_controller
+	/api/login
+	POST
+	/registrar
+	Registra una nueva cuenta de aprendiz o psicólogo
+	cita_Controller
+	/api/cita
+	GET
+	/
+	Lista todas las citas agendadas
+	cita_Controller
+	/api/cita
+	POST
+	/
+	Crea una nueva solicitud de cita de orientación
+	cita_Controller
+	/api/cita
+	PUT
+	/{id}
+	Actualiza el estado de una cita (Confirmar/Cancelar)
+	diario_controller
+	/api/diario
+	GET
+	/usuario/{id}
+	Obtiene las notas de diario escritas por un usuario
+	diario_controller
+	/api/diario
+	POST
+	/
+	Almacena una nueva entrada en el diario
+	estado_animo_usuario_controller
+	/api/estado-animo-usuario
+	GET
+	/usuario/{id}
+	Historial de estados de ánimo del aprendiz
+	estado_animo_usuario_controller
+	/api/estado-animo-usuario
+	POST
+	/
+	Guarda el registro emocional del día
+	emergencia_controller
+	/api/emergencia
+	POST
+	/
+	Registra una solicitud prioritaria de atención SOS
+	
+
+
+
+
+
+
+
+
+
+3.3. Capa de Datos (DatabaseService.cs)
+DatabaseService hereda de DbContext e incluye los conjuntos de datos (DbSet<T>):
+public class DatabaseService : DbContext
+{
+    public DatabaseService(DbContextOptions<DatabaseService> options) : base(options) { }
+
+
+    public DbSet<Usuario> Usuarios { get; set; }
+    public DbSet<Rol> Roles { get; set; }
+    public DbSet<Cita> Citas { get; set; }
+    public DbSet<Diario> Diarios { get; set; }
+    public DbSet<EstadoAnimo> EstadoAnimos { get; set; }
+    public DbSet<EstadoAnimoUsuario> EstadoAnimoUsuarios { get; set; }
+    public DbSet<Emergencia> Emergencias { get; set; }
+    public DbSet<Ficha> Fichas { get; set; }
+    public DbSet<Publicacion> Publicaciones { get; set; }
+    public DbSet<Formulario> Formularios { get; set; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.4. Pipeline de Middleware (Program.cs)
+Inicia la configuración de servicios, define las políticas de CORS (AllowAll), inicializa Swagger en entornos de desarrollo y mapea los controladores:
+var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+
+// Configuración de DbContext con SQL Server
+builder.Services.AddDbContext<DatabaseService>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SERENA_CONNECTION_STRING")));
+
+
+var app = builder.Build();
+
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+
+app.UseCors(policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
+app.Run();
+
+
+
+
+
+
+
+
+
+4. MODELO DE BASE DE DATOS Y ENTIDADES (SQL SERVER)
+4.1. Diagrama Entidad-Relación Conceptual  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.2. Diccionario de Datos Principales
+Tabla: Usuarios
+Columna
+	Tipo de Dato
+	Nulo
+	Clave
+	Descripción
+	Id
+	INT
+	NO
+	PK
+	Identificador único numérico autonumérico
+	Nombre
+	NVARCHAR(100)
+	NO
+	
+
+	Nombre completo del usuario
+	Correo
+	NVARCHAR(150)
+	NO
+	UNIQUE
+	Correo electrónico institucional o personal
+	PasswordHash
+	NVARCHAR(MAX)
+	NO
+	
+
+	Hash seguro de la contraseña
+	RolId
+	INT
+	NO
+	FK
+	Referencia al id del rol ($1 = \text{Aprendiz}, 2 = \text{Psicólogo}$)
+	FichaId
+	INT
+	SI
+	FK
+	ID de la ficha de formación asignada
+	
+
+Tabla: Diarios
+Columna
+	Tipo de Dato
+	Nulo
+	Clave
+	Descripción
+	Id
+	INT
+	NO
+	PK
+	Identificador único
+	UsuarioId
+	INT
+	NO
+	FK
+	ID del aprendiz autor
+	Titulo
+	NVARCHAR(200)
+	NO
+	
+
+	Título de la nota
+	Contenido
+	NVARCHAR(MAX)
+	NO
+	
+
+	Texto redactado (Texto plano)
+	EsCompartido
+	BIT
+	NO
+	
+
+	Indicio de privacidad ($0 = \text{Privado}, 1 = \text{Compartido}$)
+	FechaCreacion
+	DATETIME2
+	NO
+	
+
+	Fecha y hora de registro
+	
+
+Tabla: Citas
+Columna
+	Tipo de Dato
+	Nulo
+	Clave
+	Descripción
+	Id
+	INT
+	NO
+	PK
+	Identificador de la cita
+	AprendizId
+	INT
+	NO
+	FK
+	ID del aprendiz solicitante
+	PsicologoId
+	INT
+	NO
+	FK
+	ID del profesional asignado
+	FechaHora
+	DATETIME2
+	NO
+	
+
+	Fecha y hora programada
+	Estado
+	NVARCHAR(30)
+	NO
+	
+
+	Estado (Pendiente, Confirmada, Cancelada)
+	Motivo
+	NVARCHAR(MAX)
+	SI
+	
+
+	Descripción corta de la solicitud
+	
+
+4.3. Migraciones e Inicialización de Datos (Seeding)
+Entity Framework Core aplica migraciones automáticas al arrancar la aplicación si se configura context.Database.Migrate(). Las tablas por defecto se pueblan con roles estándar:
+   1. Aprendiz
+   2. Psicologo
+   3. Administrador
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5. CONFIGURACIÓN DEL ENTORNO, DOCKER Y DESPLIEGUE
+5.1. Variables de Entorno y Secrecia
+El sistema requiere las siguientes variables de entorno para su correcto funcionamiento:
+```env
+# Backend Connection String
+SERENA_CONNECTION_STRING=Server=db;Database=SerenaDb;User Id=sa;Password=YourSecurePassword123!;TrustServerCertificate=True;
+
+
+# Frontend configuration
+VITE_API_BASE_URL=http://localhost:5185/api
+```
+
+
+5.2. Orquestación con Docker Compose (docker-compose.yml)
+El archivo docker-compose.yml permite levantar la solución completa en  contenedores:
+```yaml
+version: '3.8'
+
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: serena_db
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourSecurePassword123!
+    ports:
+      - "1433:1433"
+
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: serena_backend
+    environment:
+      - SERENA_CONNECTION_STRING=Server=db;Database=SerenaDb;User Id=sa;Password=YourSecurePassword123!;TrustServerCertificate=True;
+    ports:
+      - "5185:5185"
+    depends_on:
+      - db
+
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: serena_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+```
+
+
+5.3. Guía Paso a Paso para Instalación y Ejecución Local
+Prerrequisitos
+   * Node.js v18+ instalado.
+   * .NET 8 SDK instalado.
+   * Instancia de SQL Server activa o Docker Desktop.
+Paso 1: Clonar y Configurar Backend
+cd backend
+dotnet restore
+dotnet ef database update
+dotnet run --urls=http://localhost:5185
+Paso 2: Configurar y Ejecutar Frontend
+cd ../frontend
+npm install
+npm run dev
+6. AUDITORÍA DE SEGURIDAD, DIAGNÓSTICO Y DEUDA TÉCNICA
+Durante la revisión técnica del código fuente se han detectado brechas de seguridad y desacoples de integración que deben ser corregidos antes de poner la aplicación en producción.
+6.1. Incompatibilidad de Serialización JSON en Login
+   * Problema: login_controller.cs retorna en la respuesta de autenticación un objeto con la propiedad en PascalCase (Usuario). Sin embargo, serena-api.service.ts en el cliente espera la propiedad en camelCase (usuario).
+   * Impacto: El inicio de sesión en la API puede ser exitoso (Código $200\text{ OK}$), pero el cliente frontend rechaza el perfil por evaluar la propiedad como undefined.
+   * Solución: Configurar en Program.cs la convención NamingPolicy de System.Text.Json a JsonNamingPolicy.CamelCase.
+6.2. Autenticación JWT y Falta de Middleware de Autorización
+   * Problema: Aunque la API genera una cadena JWT al iniciar sesión, los controladores no tienen los atributos [Authorize] ni validan el token Bearer en los encabezados HTTP. Adicionalmente, el cliente HTTP frontend no adjunta el token Authorization: Bearer <token> en sus peticiones.
+   * Impacto: Cualquier usuario o atacante que conozca la URL de la API puede realizar solicitudes GET o POST a /api/diario o /api/cita y manipular datos sin estar autenticado.
+   * Solución: Activar builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)... y añadir [Authorize] en los controladores sensibles.
+6.3. Confidencialidad y Simulación de Cifrado en Diarios
+   * Problema: En el frontend existía un comentario donde se mencionaba la simulación de cifrado. Los textos del diario se envían y almacenan en texto plano en la base de datos SQL Server.
+   * Impacto: Vulneración de la confidencialidad de la información confidencial de salud mental. Un administrador de base de datos podría leer las entradas de todos los aprendices.
+   * Solución: Implementar cifrado a nivel de campo (Field-Level Encryption) en C# o utilizar Always Encrypted en SQL Server.
+
+
+
+
+6.4. Persistencia Local del Módulo de Emergencia SOS
+   * Problema: Cuando un usuario envía una alerta SOS en EmergenciaModal.tsx, los datos se guardan únicamente en el localStorage del navegador si falla la API o en entornos de prueba.
+   * Impacto: Falsa expectativa de seguridad. El aprendiz asume que el personal de Bienestar ha sido notificado en tiempo real, cuando el registro sólo existe en la memoria de su navegador.
+   * Solución: Integrar envío de correos de urgencia mediante SMTP o WebSockets (SignalR) para emitir alertas sonoras/visuales en la pantalla del psicólogo en turno.
+6.5. Inconsistencias en el Control de Acceso basado en Roles (RBAC)
+   * Problema: La base de datos incluye el rol Administrador, pero el enrutador en App.tsx asigna la vista de psicólogo a cualquier usuario que no tenga exactamente el rol de aprendiz.
+   * Impacto: Falta de un panel administrativo dedicado para auditorías, gestión de usuarios o mantenimiento de fichas.
+   * Solución: Definir rutas explícitas en React para el rol Administrador y proteger los menús del cliente mediante guardias de navegación (Route Guards).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7. MATRIZ DE RECOMENDACIONES Y PLAN DE MITIGACIÓN
+Hallazgo
+	Prioridad
+	Esfuerzo Estimado
+	Acción Correctiva Recomendada
+	Corrección de JSON Naming en Login
+	CRÍTICA
+	$1\text{ Hora}$
+	Configurar CamelCase global en backend Program.cs.
+	Implementar Autorización JWT en API
+	CRÍTICA
+	$8\text{ Horas}$
+	Agregar middleware JWT en ASP.NET Core e incluir token en el servicio de React.
+	Aislamiento de Registros de Salud Mental
+	ALTA
+	$12\text{ Horas}$
+	Validar en controlador que UsuarioId del token coincida con el registro solicitado.
+	Alertas SOS en Tiempo Real
+	ALTA
+	$16\text{ Horas}$
+	Implementar SignalR / Envio de correos a la oficina de Bienestar.
+	Cifrado en Reposo para Diarios
+	MEDIA
+	$10\text{ Horas}$
+	Implementar cifrado simétrico AES-256 para la columna Contenido de diarios.
+	Corrección de puertos Docker
+	MEDIA
+	$4\text{ Horas}$
+	Sincronizar los puertos de Dockerfile del frontend con el contenedor publicado en docker-compose.yml.
+	
+
+
+
+Manual Técnico — SERENA Web Platform
+Servicio Nacional de Aprendizaje (SENA) — 2026

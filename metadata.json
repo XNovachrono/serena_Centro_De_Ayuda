@@ -1,0 +1,8 @@
+{
+  "name": "SERENA — Centro de Ayuda",
+  "description": "Centro de ayuda oficial de SERENA (SENA): guías para usuarios, aprendices, psicólogos, desarrolladores e identidad de marca.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
